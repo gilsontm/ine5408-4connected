@@ -182,9 +182,14 @@ bool process_xml_file(const string filename) {
 }
 
 int main () {
-    cout << verify_xml_file("./datasets/dataset01.xml") << endl;
-
-    process_xml_file("./datasets/dataset01.xml");
+    string file_path;
+    cin >> file_path;
+    if (verify_xml_file("./datasets/" + file_path)) {
+        cout << file_path << " is valid." << endl;
+        process_xml_file("./datasets/" + file_path);
+    } else {
+        cout << file_path << " is invalid." << endl;
+    }
 
     return 0;
 }

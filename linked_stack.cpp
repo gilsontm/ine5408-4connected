@@ -1,4 +1,4 @@
-#include "linked_stack.h"
+#include "./linked_stack.h"
 
 template<typename T>
 structures::LinkedStack<T>::LinkedStack() {

@@ -1,4 +1,4 @@
-#include "linked_queue.h"
+#include "./linked_queue.h"
 
 template<typename T>
 structures::LinkedQueue<T>::LinkedQueue() {

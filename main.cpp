@@ -3,8 +3,8 @@
 #include <string.h>
 #include <iostream>
 #include <fstream>
-#include "linked_stack.cpp"
-#include "linked_queue.cpp"
+#include "./linked_stack.cpp"
+#include "./linked_queue.cpp"
 
 using namespace std;
 using namespace structures;
@@ -163,10 +163,6 @@ bool process_xml_file(const string filename) {
                     height = stoi(content);
                 if (tag.compare("/data") == 0) {
                     connected_components(name, content, width, height);
-                    // cout << "name: " << name << endl;
-                    // cout << "width: " << width << endl;
-                    // cout << "height: " << height << endl;
-                    // cout << "processar data: " << content << endl;
                 }
                 inside_tag = false;
                 content = "";
@@ -184,11 +180,10 @@ bool process_xml_file(const string filename) {
 int main () {
     string file_path;
     cin >> file_path;
-    if (verify_xml_file("./datasets/" + file_path)) {
-        cout << file_path << " is valid." << endl;
-        process_xml_file("./datasets/" + file_path);
+    if (verify_xml_file(file_path)) {
+        process_xml_file(file_path);
     } else {
-        cout << file_path << " is invalid." << endl;
+        cout << " error" << endl;
     }
 
     return 0;

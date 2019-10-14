@@ -5,33 +5,33 @@
 
 namespace structures {
 
-//! ...
+//! Classe pilha encadeada (dinâmica).
 template<typename T>
 class LinkedStack {
  public:
-    //! ...
+    //! Construtor da pilha.
     LinkedStack();
 
-    //! ...
+    //! Destrutor da pilha.
     ~LinkedStack();
 
-    //! ...
-    void clear();  // limpa pilha
+    //! Esvazia a pilha, removendo todos os elementos.
+    void clear();
 
-    //! ...
-    void push(const T& data);  // empilha
+    //! Adiciona um elemento ao topo da pilha.
+    void push(const T& data);
 
-    //! ...
-    T pop();  // desempilha
+    //! Remove e retorna (desempilha) o elemento no topo da pilha.
+    T pop();
 
-    //! ...
-    T& top() const;  // dado no topo
+    //! Retorna o elemento no topo da pilha, sem removê-lo.
+    T& top() const;
 
-    //! ...
-    bool empty() const;  // pilha vazia
+    //! Retorna true se a pilha estiver vazia, else caso contrário.
+    bool empty() const;
 
-    //! ...
-    std::size_t size() const;  // tamanho da pilha
+    //! Retorna o tamanho da pilha.
+    std::size_t size() const;
 
  private:
     class Node {

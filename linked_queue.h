@@ -5,36 +5,36 @@
 
 namespace structures {
 
-//! ...
+//! Classe fila encadeada (dinâmica).
 template<typename T>
 class LinkedQueue {
  public:
-    //! ...
+    //! Construtor da fila.
     LinkedQueue();
 
-    //! ...
+    //! Destrutor da fila.
     ~LinkedQueue();
 
-    //! ...
-    void clear();  // limpar
+    //! Esvazia a fila, removendo todos os elementos.
+    void clear();
 
-    //! ...
-    void enqueue(const T& data);  // enfilerar
+    //! Adiciona um elemento ao final da fila.
+    void enqueue(const T& data);
 
-    //! ...
-    T dequeue();  // desenfilerar
+    //! Remove e retorna o primeiro elemento da fila.
+    T dequeue();
 
-    //! ...
-    T& front() const;  // primeiro dado
+    //! Retorna o primeiro elemento da fila, sem removê-lo.
+    T& front() const;
 
-    //! ...
-    T& back() const;  // último dado
+    //! Retorna o último elemento da fila, sem removê-lo.
+    T& back() const;
 
-    //! ...
-    bool empty() const;  // fila vazia
+    //! Retorna true se a fila estiver vazia, else caso contrário.
+    bool empty() const;
 
-    //! ...
-    std::size_t size() const;  // tamanho
+    //! Retorna o tamanho da fila.
+    std::size_t size() const;
 
  private:
     class Node {

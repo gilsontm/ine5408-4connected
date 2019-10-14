@@ -9,6 +9,11 @@
 using namespace std;
 using namespace structures;
 
+//! Função que valida um arquivo XML.
+/*!
+    \param filename uma string que representa o caminho do arquivo XML.
+    \return um boolean.
+*/
 bool verify_xml_file (const string filename) {
     string line, tag;    
     ifstream file;
@@ -54,6 +59,13 @@ bool verify_xml_file (const string filename) {
     return true;
 }
 
+
+//! Função que constroi uma matriz representada em um vetor e preenche-a com zeros.
+/*!
+    \param width um inteiro que corresponde à largura da matriz.
+    \param height um inteiro que corresponde à altura da matriz.
+    \return um ponteiro de inteiro que aponta para a matriz criada.
+*/
 int* build_matrix(int width, int height) {
     int size = width * height;
     int* matrix = (int*) malloc(sizeof(int) * size);
@@ -63,11 +75,20 @@ int* build_matrix(int width, int height) {
     return matrix;
 }
 
+//! ...
 typedef struct pos_s {
     unsigned int x;
     unsigned int y;
 } pos_t;
 
+//! Função que encontra os elementos 4-conectados em uma imagem binária.
+/*!
+    \param name uma string que representa o nome da imagem binária.
+    \param data uma string contendo a imagem binária.
+    \param width um inteiro que representa a largura da imagem.
+    \param height um inteiro que representa a altura da imagem.
+    \return um inteiro que corresponde ao número de componentes 4-conectados na imagem.
+*/
 int connected_components(const string name, const string data, int width, int height) {
     LinkedQueue<pos_t*>* queue = new LinkedQueue<pos_t*>();
 
@@ -135,7 +156,7 @@ int connected_components(const string name, const string data, int width, int he
     cout << name << " " << label - 1 << endl;
 }
 
-
+//! ...
 bool process_xml_file(const string filename) {
     string line, tag, name, content;
     int width, height;
@@ -187,4 +208,3 @@ int main () {
     }
 
     return 0;
-}

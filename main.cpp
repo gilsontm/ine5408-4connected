@@ -9,6 +9,9 @@
 using namespace std;
 using namespace structures;
 
+//! ...
+namespace functions {
+
 //! Função que valida um arquivo XML.
 /*!
     \param filename uma string que representa o caminho do arquivo XML.
@@ -58,7 +61,6 @@ bool verify_xml_file (const string filename) {
         return false;
     return true;
 }
-
 
 //! Função que constroi uma matriz representada em um vetor e preenche-a com zeros.
 /*!
@@ -156,8 +158,11 @@ int connected_components(const string name, const string data, int width, int he
     cout << name << " " << label - 1 << endl;
 }
 
-//! ...
-bool process_xml_file(const string filename) {
+//! Função que itera pelo arquivo XML e processa todas as imagens binárias encontradas.
+/*!
+    \param filename uma string que representa o nome do arquivo XML.
+*/
+void process_xml_file(const string filename) {
     string line, tag, name, content;
     int width, height;
     ifstream file;
@@ -198,13 +203,16 @@ bool process_xml_file(const string filename) {
     }
 }
 
+}
+
 int main () {
     string file_path;
     cin >> file_path;
-    if (verify_xml_file(file_path)) {
-        process_xml_file(file_path);
+    if (functions::verify_xml_file(file_path)) {
+        functions::process_xml_file(file_path);
     } else {
         cout << " error" << endl;
     }
 
     return 0;
+}

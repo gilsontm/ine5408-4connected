@@ -1,5 +1,3 @@
-//! Copyright 2019 Gilson Trombetta Magro
-
 #include <cstdint>
 #include <stdexcept>  // C++ Exceptions
 
